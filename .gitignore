@@ -1,0 +1,88 @@
+# Временные файлы
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# Кэш и временные директории
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Конфиденциальные данные
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+secrets.json
+credentials.json
+config/credentials.json
+config/secrets.json
+
+# Системные файлы и директории
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.code-workspace
+
+# Виртуальные окружения
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+runtime.txt
+
+# Данные
+data/*.json
+data/*.csv
+data/*.db
+data/*.sqlite
+
+# Логи
+logs/
+*.log
+
+# Билд и дистрибутив
+dist/
+build/
+*.egg-info/
+coverage.xml
+junit.xml
+
+# Docker
+.dockerenv
+!docker/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Icon?
+!Icon-16.png
+!Icon-32.png
+!Icon-128.png
+!Icon-256.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*$pyc.class
+*.so
+.Python
+build/
+develop-eggs/
+.installed.cfg
+*.egg
