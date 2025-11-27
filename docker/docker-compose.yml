@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: telegram_bot
+    env_file:
+      - ../.env
+    environment:
+      - DATABASE_PATH=/data/database.db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - LOG_FILE=/logs/app.log
+      - UPLOAD_FOLDER=/uploads/
+      - MEDIA_PATH=/media/
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./uploads:/uploads
+      - ./media:/media
+    ports:
+      - "8000:8000"  # Если приложение использует веб-сервер
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: bot_redis
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  redis_data:
